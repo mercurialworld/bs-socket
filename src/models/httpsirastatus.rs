@@ -12,4 +12,25 @@ pub struct Event {
 }
 
 #[derive(Debug, Deserialize)]
-pub enum SiraEventType {}
+#[serde(rename_all = "camelCase")]
+#[serde(tag = "event", content = "status")]
+pub enum SiraEventType {
+    Hello,
+    SongStart,
+    Finished,
+    SoftFailed,
+    Failed,
+    Menu,
+    Pause,
+    Resume,
+    NoteSpawned,
+    NoteCut,
+    NoteFullyCut,
+    NoteMissed,
+    BombCut,
+    BombMissed,
+    ObstacleEnter,
+    ObstacleExit,
+    ScoreChanged,
+    BeatmapEvent,
+}

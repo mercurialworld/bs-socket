@@ -1,16 +1,6 @@
 use serde::Deserialize;
 
-#[derive(Debug, Deserialize, Default)]
-pub enum Rank {
-    #[default]
-    SSS,
-    SS,
-    A,
-    B,
-    C,
-    D,
-    E,
-}
+use crate::models::common::Rank;
 
 #[derive(Debug, Deserialize, Default)]
 pub enum ColorType {
@@ -46,7 +36,7 @@ pub enum LiveDataEventTrigger {
 }
 
 #[derive(Debug, Deserialize, Default)]
-#[serde(rename = "PascalCase")]
+#[serde(rename_all = "PascalCase")]
 pub struct BlockHitScore {
     /// The pre-swing score (0-70)
     pub pre_swing: u8,
@@ -57,7 +47,7 @@ pub struct BlockHitScore {
 }
 
 #[derive(Debug, Deserialize, Default)]
-#[serde(rename = "PascalCase")]
+#[serde(rename_all = "PascalCase")]
 pub struct LiveData {
     //====SCORE====
     ///The current raw score.

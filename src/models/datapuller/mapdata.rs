@@ -21,7 +21,7 @@ pub struct Modifiers {
 }
 
 #[derive(Debug, Deserialize, Default)]
-#[serde(rename = "PascalCase")]
+#[serde(rename_all = "PascalCase")]
 pub struct PracticeModeModifiers {
     pub song_speed_mul: f32,
     pub start_in_advance_and_clear_notes: bool,
@@ -29,7 +29,7 @@ pub struct PracticeModeModifiers {
 }
 
 #[derive(Debug, Deserialize, Default)]
-#[serde(rename = "PascalCase")]
+#[serde(rename_all = "PascalCase")]
 pub struct RGBAColor {
     /// Hexadecimal RGB color code, including the # symbol
     #[serde(default = "default_hex_code")]
@@ -49,7 +49,7 @@ fn default_hex_code() -> String {
 }
 
 #[derive(Debug, Deserialize, Default)]
-#[serde(rename = "PascalCase")]
+#[serde(rename_all = "PascalCase")]
 pub struct ColorScheme {
     /// The color of the primary (typically left) saber, and by extension the notes.
     pub saber_a_color: Option<RGBAColor>,
@@ -68,7 +68,7 @@ pub struct ColorScheme {
 }
 
 #[derive(Debug, Deserialize, Default)]
-#[serde(rename = "PascalCase")]
+#[serde(rename_all = "PascalCase")]
 pub struct RankedState {
     /// Is map ranked on any leaderboards
     pub ranked: bool,
@@ -91,7 +91,7 @@ pub struct RankedState {
 }
 
 #[derive(Debug, Deserialize, Default)]
-#[serde(rename = "PascalCase")]
+#[serde(rename_all = "PascalCase")]
 pub struct MapData {
     //====LEVEL====
     /// Whether the level is paused.
